@@ -142,8 +142,6 @@ extension MapViewController : MKMapViewDelegate {
                     Vc?.pinIcon = foundPin
                 }
             }
-
-            
             Vc?.dataController = dataController
             self.navigationController?.pushViewController(Vc!, animated: true)
         }

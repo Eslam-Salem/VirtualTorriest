@@ -21,31 +21,36 @@ class ImagesViewController: UIViewController {
     var coordinate : CLLocationCoordinate2D?
     let regionRadius: CLLocationDistance = 1000
     
-    var pinIcon : Pins!
-    var images :[Images] = []
     var dataController : DataController!
-
+    var pinIcon : Pins!
+    var images : [Images] = []{
+        didSet{
+                self.imagesCollectionView.reloadInputViews()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.noImageLabel.isHidden = true
         imagesCollectionView.delegate = self
         imagesCollectionView.dataSource = self
-        downloadImages()
         setUpMap()
-        print (self.lat! , self.lon!)
-        print (pinIcon.longitude , pinIcon.latitude)
 
-//        pinIcon.latitude = self.lat!
-//        pinIcon.longitude = self.lon!
         let fetchRequest:NSFetchRequest <Images> = Images.fetchRequest()
-        
-        let predicate = NSPredicate(format: "pinIcons == %@", pinIcon)
+        let predicate = NSPredicate(format: "pin == %@", pinIcon)
         fetchRequest.predicate = predicate
-        if let result = try? dataController.viewContext.fetch(fetchRequest){
-            images = result
-        }
-        print ( "hiiiiii")
+        
+        downloadImages()
+        
+//        if pinIcon.images?.count == 0 {
+//            print ("no saved images For this PinIcon")
+//            print ("DOWNLOADING ....")
+//            downloadImages()
+//        }else {
+//            if let result = try? dataController.viewContext.fetch(fetchRequest){
+//                images = result
+//            }
+//        }
 
     }
 
@@ -76,8 +81,9 @@ class ImagesViewController: UIViewController {
             Constants.FlickrParameterKeys.Format: Constants.FlickrParameterValues.ResponseFormat,
             Constants.FlickrParameterKeys.NoJSONCallback: Constants.FlickrParameterValues.DisableJSONCallback
         ]
-        displayImageFromFlickrBySearch(methodParameters as [String:AnyObject], withPageNumber: 1)
+        displayImageFromFlickrBySearch(methodParameters as [String:AnyObject], withPageNumber: 5234345634526456456)
     }
+    
     private func bboxString() -> String {
         return "\(self.lon! - 0.5) , \(self.lat! - 0.5) , \(self.lon! + 0.5), \(self.lat! + 0.5)"
     }
@@ -91,7 +97,7 @@ class ImagesViewController: UIViewController {
         
         // create session and request
         let session = URLSession.shared
-        let request = URLRequest(url: flickrURLFromParameters(methodParameters))
+        let request = URLRequest(url: flickrURLFromParameters(methodParametersWithPageNumber))
         
         // create network request
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -190,8 +196,9 @@ class ImagesViewController: UIViewController {
             let queryItem = URLQueryItem(name: key, value: "\(value)")
             components.queryItems!.append(queryItem)
         }
-        
+        print(components.url!)
         return components.url!
+        
     }
     
     func displayError(_ error: String) {

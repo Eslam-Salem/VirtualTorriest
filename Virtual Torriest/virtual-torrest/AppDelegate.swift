@@ -36,7 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    func applicationWillTerminate(_ application: UIApplication) {
+       saveViewContext ()
+    }
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        saveViewContext ()
+    }
+    
+    func saveViewContext () {
+        try? dataController.viewContext.save()
+    }
 
 }
 

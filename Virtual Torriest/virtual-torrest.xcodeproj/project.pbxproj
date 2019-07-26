@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0405B46122EB8E0500A46834 /* parseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405B46022EB8E0500A46834 /* parseClient.swift */; };
 		04171D6F22DE576E0006B6F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04171D6E22DE576E0006B6F7 /* Assets.xcassets */; };
 		04171D7222DE576E0006B6F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04171D7022DE576E0006B6F7 /* LaunchScreen.storyboard */; };
 		04171D7D22DE576E0006B6F7 /* virtual_torrestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04171D7C22DE576E0006B6F7 /* virtual_torrestTests.swift */; };
@@ -15,7 +16,6 @@
 		04171DA122DE58610006B6F7 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04171D9E22DE58600006B6F7 /* ImagesViewController.swift */; };
 		04171DA222DE58610006B6F7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04171D9F22DE58610006B6F7 /* MapViewController.swift */; };
 		04171DA322DE58610006B6F7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04171DA022DE58610006B6F7 /* CollectionViewCell.swift */; };
-		04171DA422DE58690006B6F7 /* parseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04171D9822DE57CD0006B6F7 /* parseClient.swift */; };
 		04171DA522DE58690006B6F7 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04171D9922DE57CD0006B6F7 /* Client.swift */; };
 		04171DA922DE58700006B6F7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04171DA822DE58700006B6F7 /* DataController.swift */; };
 		04171DAB22DE59ED0006B6F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04171DAA22DE59ED0006B6F7 /* AppDelegate.swift */; };
@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0405B46022EB8E0500A46834 /* parseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parseClient.swift; sourceTree = "<group>"; };
 		04171D6422DE576D0006B6F7 /* virtual-torrest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "virtual-torrest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04171D6E22DE576E0006B6F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04171D7122DE576E0006B6F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		04171D8322DE576E0006B6F7 /* virtual-torrestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "virtual-torrestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04171D8722DE576E0006B6F7 /* virtual_torrestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = virtual_torrestUITests.swift; sourceTree = "<group>"; };
 		04171D8922DE576E0006B6F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04171D9822DE57CD0006B6F7 /* parseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parseClient.swift; sourceTree = "<group>"; };
 		04171D9922DE57CD0006B6F7 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		04171D9C22DE57FC0006B6F7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		04171D9E22DE58600006B6F7 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 			children = (
 				04171DA822DE58700006B6F7 /* DataController.swift */,
 				04171DAC22DE5AC80006B6F7 /* mapAnnotations.xcdatamodeld */,
-				04171D9822DE57CD0006B6F7 /* parseClient.swift */,
+				0405B46022EB8E0500A46834 /* parseClient.swift */,
 				04171D9922DE57CD0006B6F7 /* Client.swift */,
 			);
 			path = Model;
@@ -304,7 +304,7 @@
 				04171DA522DE58690006B6F7 /* Client.swift in Sources */,
 				04171DA122DE58610006B6F7 /* ImagesViewController.swift in Sources */,
 				04171DA922DE58700006B6F7 /* DataController.swift in Sources */,
-				04171DA422DE58690006B6F7 /* parseClient.swift in Sources */,
+				0405B46122EB8E0500A46834 /* parseClient.swift in Sources */,
 				04171DA222DE58610006B6F7 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
