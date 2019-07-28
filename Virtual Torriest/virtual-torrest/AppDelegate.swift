@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("This is the first launch ever!")
             UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
             UserDefaults.standard.synchronize()
+            dataController.load()
         }
     }
 

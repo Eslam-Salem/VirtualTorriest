@@ -124,7 +124,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <state key="normal" title="New Collection"/>
                                 <connections>
-                                    <action selector="newCollectionButtonPressed:" destination="46Q-d9-Mc9" eventType="touchUpInside" id="O3V-ml-59n"/>
+                                    <action selector="newCollectionButtonPressedWith_sender:" destination="46Q-d9-Mc9" eventType="touchUpInside" id="AH4-Qy-ilE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -150,6 +150,7 @@
                     <connections>
                         <outlet property="imagesCollectionView" destination="djS-w9-5Wi" id="kaJ-Cn-fVA"/>
                         <outlet property="mapView" destination="KL2-DA-ZW3" id="fVD-W4-Nmh"/>
+                        <outlet property="newCollectionButton" destination="hpc-Zc-gSo" id="72J-7m-Mpu"/>
                         <outlet property="noImageLabel" destination="M0l-bS-DQK" id="LbD-9n-0rV"/>
                     </connections>
                 </viewController>

@@ -64,6 +64,7 @@ class MapViewController: UIViewController {
             let points = CLLocationCoordinate2DMake(lat, lon)
             annotation.coordinate = points
             mapView.addAnnotation(annotation)
+
             }
         }
     }
@@ -86,7 +87,6 @@ class MapViewController: UIViewController {
         //add the anootaion at the corrdinate returned
         let annotation = MKPointAnnotation()
         annotation.coordinate = points
-        annotation.title = "hi"
         mapView.addAnnotation(annotation)
         // persist icons
         let iconPin = Pins(context: dataController.viewContext)
@@ -127,8 +127,13 @@ extension MapViewController : MKMapViewDelegate {
             }
             mapView.removeAnnotation(view.annotation!)
         }else {
+            let fetchRequest:NSFetchRequest<Pins> = Pins.fetchRequest()
+            
+            if let result = try? dataController.viewContext.fetch(fetchRequest){
+                pinIcons = result
+            }
 
-        let Vc = self.storyboard?.instantiateViewController(withIdentifier: "ImagesViewController") as? ImagesViewController
+            let Vc = self.storyboard?.instantiateViewController(withIdentifier: "ImagesViewController") as? ImagesViewController
             
             print(view.annotation?.coordinate.longitude)
             print( view.annotation?.coordinate.latitude)
@@ -140,6 +145,7 @@ extension MapViewController : MKMapViewDelegate {
                 if foundPin.latitude == view.annotation?.coordinate.latitude && foundPin.longitude == view.annotation?.coordinate.longitude{
     
                     Vc?.pinIcon = foundPin
+                    print (foundPin)
                 }
             }
             Vc?.dataController = dataController
